@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William & Emma | June 1, 2026</title>
+
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts for an elegant look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        /* We're defining our custom fonts here so Tailwind can use them */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F8F5F2; /* A warm, off-white background */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        /* A subtle pattern for the background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+            opacity: 0.3;
+            z-index: -1;
+        }
+        /* Smooth scrolling for navigation links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 
+        Header & Navigation
+    -->
+    <header class="bg-[#A3B18A] backdrop-blur-md shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold text-white">W & E </a>
+            <div class="hidden md:flex space-x-8 text-white">
+                <a href="#details" class="hover:text-gray-200 transition-colors">Details</a>
+                <a href="#rsvp" class="hover:text-gray-200 transition-colors">RSVP</a>
+                <a href="#gifts" class="hover:text-gray-200 transition-colors">Gifts</a>
+                <a href="#guest-info" class="hover:text-gray-200 transition-colors">Guest Info</a>
+                <a href="#schedule" class="hover:text-gray-200 transition-colors">Schedule</a>
+                <a href="#dress-code" class="hover:text-gray-200 transition-colors">Dress Code</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 
+        Main Content Area
+    -->
+    <main>
+        <!-- 
+            Hero Section
+        -->
+        <section class="h-[60vh] md:h-[80vh] bg-cover bg-center flex items-end justify-center pb-16 md:pb-24 text-white" style="background-image: url('https://i.imgur.com/EjJmEw6.jpeg');">
+            <div class="bg-[#BF5A36]/70 p-8 rounded-lg text-center">
+                <h1 class="text-5xl md:text-8xl font-bold">William & Emma</h1>
+                <p class="text-xl md:text-2xl mt-4">June 1, 2026 • Omaha, Nebraska</p>
+                <div id="countdown" class="text-2xl mt-6 font-semibold"></div>
+            </div>
+        </section>
+
+        <!-- Container for the rest of the content -->
+        <div class="container mx-auto p-6 md:p-12 max-w-4xl">
+
+            <!-- Our Story Section -->
+            <section id="story" class="py-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Welcome!</h2>
+                <p class="text-lg leading-relaxed max-w-2xl mx-auto">
+                    Welcome to our wedding website! We are so excited to share our special day with you. Here you'll find all the information you need regarding our wedding celebration.
+                </p>
+            </section>
+
+            <hr class="border-t-2 border-[#A3B18A] my-8">
+
+            <!-- Wedding Details Section -->
+            <section id="details" class="py-16 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-4xl font-bold mb-6">The Wedding</h2>
+                    <div class="space-y-4 text-lg">
+                        <div>
+                            <h3 class="font-bold text-xl text-[#BF5A36]">When</h3>
+                            <p>Monday, June 1st, 2026</p>
+                            <p>Ceremony begins at 6:00 PM and flows directly into the reception</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-[#BF5A36]">Where</h3>
+                            <p>The Joslyn Art Museum</p>
+                            <p>2200 Dodge St, Omaha, NE 68102</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://joslyn.org/_next/image/?url=https%3A%2F%2Flive-joslyn-wp.pantheonsite.io%2Fapp%2Fuploads%2F2025%2F03%2FHost-an-event.jpg&w=3840&q=90" alt="Wedding Venue" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+            </section>
+            
+            <hr class="border-t-2 border-[#A3B18A] my-8">
+
+            <!-- RSVP Section -->
+            <section id="rsvp" class="py-16 text-center">
+                <h2 class="text-4xl font-bold mb-4">RSVP Form</h2>
+                <p class="mb-8 max-w-xl mx-auto">Please kindly respond by October 1st, 2025.</p>
+                
+                <!-- 
+                  The form now has an ID so our script can find it.
+                  The action attribute points to your Google Form's submission URL.
+                  You must replace YOUR_FORM_ID with the ID from your Google Form's URL.
+                  e.g., https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform -> action=".../YOUR_FORM_ID/formResponse"
+                -->
+                <form id="rsvp-form" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg text-left" 
+                      action="https://docs.google.com/forms/d/e/1FAIpQLSe-WM0e5Q8NSoIGJHnQw0NwqM8u44VhmT0BaAreWLGJlp5FwQ/formResponse" 
+                      method="POST" 
+                      target="hidden_iframe">
+                    
+                    <div id="form-content">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Full Name(s)</label>
+                            <!-- IMPORTANT: Replace XXXXXXXXXX with your real entry ID -->
+                            <input type="text" id="name" name="entry.771301791" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BF5A36]" placeholder="e.g., John and Jane Doe" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                            <!-- IMPORTANT: Replace XXXXXXXXXX with your real entry ID -->
+                            <input type="email" id="email" name="entry.1910458853" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BF5A36]" placeholder="For updates and important information" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="attending" class="block text-gray-700 font-bold mb-2">Will you be attending?</label>
+                            <!-- IMPORTANT: Replace XXXXXXXXXX with your real entry ID -->
+                            <select id="attending" name="entry.378627221" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BF5A36]">
+                                <option>Joyfully Accepts</option>
+                                <option>Regretfully Declines</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="hotel" class="block text-gray-700 font-bold mb-2">Are you interested in staying at a nearby hotel organized by Will and Emma?</label>
+                            <!-- IMPORTANT: Replace XXXXXXXXXX with your real entry ID -->
+                            <select id="hotel" name="entry.878362556" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BF5A36]">
+                                <option>Yes, contact me with group hotel information!</option>
+                                <option>No, I have my own accomodations.</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-[#BF5A36] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#E2725B] transition-colors shadow-md">Submit RSVP</button>
+                    </div>
+                    
+                    <!-- This message will be shown on successful submission -->
+                    <div id="confirmation-message" class="hidden text-center p-4 bg-green-100 text-green-800 rounded-lg">
+                        <h3 class="font-bold text-xl">Thank You!</h3>
+                        <p>Your RSVP has been submitted successfully. We can't wait to celebrate with you!</p>
+                    </div>
+                </form>
+            </section>
+
+            <hr class="border-t-2 border-[#A3B18A] my-8">
+            
+            <!-- Other sections remain the same... -->
+            <!-- Gifts Section -->
+            <section id="gifts" class="py-16 text-center">
+                <h2 class="text-4xl font-bold mb-8">Gifts</h2>
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-3xl font-bold mb-4">Registry</h3>
+                        <p class="mb-6">Your presence is the only gift we need! However, if you wish to give a gift, we are registered at the following places.</p>
+                        <div class="flex flex-wrap justify-center items-center gap-4">
+                            <a href="YOUR_AMAZON_LINK_HERE" target="_blank" class="bg-[#BF5A36] px-6 py-2 rounded-full hover:bg-[#E2725B] transition-colors text-[#F8F5F2]">Amazon</a>
+                            <a href="YOUR_CRATE_AND_BARREL_LINK_HERE" target="_blank" class="bg-[#BF5A36] px-6 py-2 rounded-full hover:bg-[#E2725B] transition-colors text-[#F8F5F2]">Crate & Barrel</a>
+                            <a href="YOUR_HONEYMOON_LINK_HERE" target="_blank" class="bg-[#BF5A36] px-6 py-2 rounded-full hover:bg-[#E2725B] transition-colors text-[#F8F5F2]">Honeymoon Duffles</a>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-3xl font-bold mb-4">Honeymoon Fund</h3>
+                        <p class="mb-4">As an alternative to a traditional gift, you can contribute to our honeymoon adventure!</p>
+                        <p class="font-bold text-[#BF5A36]">
+                            Venmo: <a href="https://venmo.com/u/emmashelite" target="_blank" class="underline hover:text-[#E2725B]">@emmashelite</a>
+                        </p>
+                        <p class="text-gray-500 mt-2">(Thank you!)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="border-t-2 border-[#A3B18A] my-8">
+
+            <!-- Guest Information Section -->
+            <section id="guest-info" class="py-16 text-center">
+                <h2 class="text-4xl font-bold mb-8">Guest Information</h2>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg text-left">
+                    <ul class="space-y-6 text-lg">
+                        <li>
+                            <strong class="text-[#BF5A36]">Arrival Time:</strong> The doors to the museum open at 5:30pm, and guests are strictly not allowed in until then. The ceremeony will begin promptly at 6:00pm, so please arrive as closely to 5:30pm as possible to find your seat.
+                        </li>
+                        <li>
+                            <strong class="text-[#BF5A36]">Parking:</strong> The museum has a parking lot available that can accomodate all guests. Regardless, if you are staying in a nearby hotel, we recommend walking, and we always encourage carpooling. 
+                        </li>
+                        <li>
+                            <strong class="text-[#BF5A36]">Dinner & Drinks:</strong> A buffet-style dinner will be served during the reception, featuring a chicken taco bar with rice and beans. A cash bar will be available at the guest's cost with a selection of beer, wine, and signature cocktails. All payment types are accepted.
+                        </li>
+                        <li>
+                            <strong class="text-[#BF5A36]">Hotels:</strong> For our out-of-town guests, we want to make your stay as convenient as possible. As part of the RSVP, we ask if you plan on staying in a hotel. Based on the number of guests who say yes, we will try to find a nearby hotel that can offer a discount or block of rooms. 
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr class="border-t-2 border-[#A3B18A] my-8">
+
+            <!-- Schedule Section -->
+            <section id="schedule" class="py-16 text-center">
+                <h2 class="text-4xl font-bold mb-8">Schedule</h2>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg text-left">
+                    <ul class="space-y-6 text-lg">
+                        <li>
+                            <span class="font-bold text-[#BF5A36]">5:30pm: </span>
+                            <span class="font-bold text-[#E2725B]">Arrival. </span>
+                            Doors open for guests. Please arrive as closely to this time as possible to find your seat.
+                        </li>
+                        <li>
+                            <span class="font-bold text-[#BF5A36]">6:00 - 6:30pm: </span>
+                            <span class="font-bold text-[#E2725B]">Ceremony. </span>
+                            The ceremony will begin promptly at 6:00pm in The Bridge & Overlook. Please be seated by this time.
+                        </li>
+                        <li>
+                            <span class="font-bold text-[#BF5A36]">6:30 - 7:30pm: </span>
+                            <span class="font-bold text-[#E2725B]">Cocktail Hour. </span>
+                            Once the ceremony has concluded, guests will take their chair from The Bridge & Overlook into the Fountain Court where the reception will later be held. Guests will have access to the bar and art galleries for an hour. The newlyweds will take photos during this time.
+                        </li>
+                        <li>
+                            <span class="font-bold text-[#BF5A36]">7:30pm: </span>
+                            <span class="font-bold text-[#E2725B]">Dinner. </span>
+                            We will be serving a buffet-style dinner in the Fountain Court. Guests will be able to choose from a chicken taco bar with rice and beans.
+                        </li>
+                        <li>
+                            <span class="font-bold text-[#BF5A36]">7:30 - 11:30pm: </span>
+                            <span class="font-bold text-[#E2725B]">Reception. </span>
+                            The reception will include dinner, cash bar, toasts, dancing, pictures, and more! We will have a DJ playing music throughout the night.
+                        </li>
+                        <li>
+                            <span class="font-bold text-[#BF5A36]">11:30pm: </span>
+                            <span class="font-bold text-[#E2725B]">Last Call. </span>
+                            Last call for drinks will be at 11:30pm. We ask that all guests leave the venue by midnight.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr class="border-t-2 border-[#A3B18A] my-8">
+
+            <!-- Dress Code Section -->
+            <section id="dress-code" class="py-16 text-center">
+                <h2 class="text-4xl font-bold mb-8">Dress Code</h2>
+                <div class="max-w-3xl mx-auto">
+                    <p class="text-lg leading-relaxed mb-8">
+                        The dress code for our wedding is <strong class="text-[#BF5A36]">Formal to Cocktail Attire</strong>. Think formal dresses, nicer cocktail dresses, dressy jumpsuits, traditional suits, jacket and tie, etc. We kindly ask no denim, shorts, hats, or white/ivory. If you are hesitant about a dress choice, you can never dress too nice!
+                    </p>
+                    <h3 class="text-2xl font-bold mb-6">Our Color Palette</h3>
+                    <p class="mb-8">If you'd like some inspiration, here is our color palette for the day:</p>
+                    <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+                        <div class="text-center">
+                            <img src="https://placehold.co/150x150/A3B18A/ffffff?text=Sage" alt="Sage Green Color Swatch" class="rounded-full shadow-md mx-auto">
+                            <p class="mt-2 font-semibold">Sage Green</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://placehold.co/150x150/BF5A36/ffffff?text=Terracotta" alt="Terracotta Color Swatch" class="rounded-full shadow-md mx-auto">
+                            <p class="mt-2 font-semibold">Terracotta</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://placehold.co/150x150/F8F5F2/333333?text=Ivory" alt="Ivory Color Swatch" class="rounded-full shadow-md mx-auto">
+                            <p class="mt-2 font-semibold">Ivory (DON'T WEAR)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 
+        Footer
+    -->
+    <footer class="text-center py-8 bg-[#A3B18A] mt-16">
+        <p class="font-semibold text-white">Website homemade by Will Spence. Please report any issues so they can be fixed! (Last updated 8/4/25)</p>
+        <p class="text-gray-200">See you in Omaha!</p>
+    </footer>
+
+    <!-- This iframe is used to submit the form data to Google without redirecting the user -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <!-- 
+        JavaScript Section
+    -->
+    <script>
+        // Countdown Timer Logic
+        const countDownDate = new Date("2026-06-01T18:00:00-05:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const countdownElement = document.getElementById("countdown");
+            if (countdownElement) {
+                countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            }
+            if (distance < 0) {
+                clearInterval(x);
+                if (countdownElement) {
+                    countdownElement.innerHTML = "Happily Married!";
+                }
+            }
+        }, 1000);
+
+        // RSVP Form Submission Logic
+        const rsvpForm = document.getElementById('rsvp-form');
+        rsvpForm.addEventListener('submit', function(e) {
+            // The form is submitted to the hidden iframe, so the page doesn't redirect.
+            // We just need to show the confirmation message after a short delay.
+            setTimeout(function() {
+                const formContent = document.getElementById('form-content');
+                const confirmationMessage = document.getElementById('confirmation-message');
+                formContent.style.display = 'none';
+                confirmationMessage.style.display = 'block';
+            }, 500); // 500ms delay to ensure data is sent
+        });
+    </script>
+
+</body>
+</html>
